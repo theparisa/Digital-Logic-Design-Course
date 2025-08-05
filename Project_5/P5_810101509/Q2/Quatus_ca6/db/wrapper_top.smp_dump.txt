@@ -1,0 +1,26 @@
+
+State Machine - |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU|pstate
+Name pstate.waiting_for_got pstate.diverging pstate.empty pstate.Idle pstate.making_sure_got_data 
+pstate.Idle 0 0 0 0 0 
+pstate.empty 0 0 1 1 0 
+pstate.diverging 0 1 0 1 0 
+pstate.waiting_for_got 1 0 0 1 0 
+pstate.making_sure_got_data 0 0 0 1 1 
+
+State Machine - |wrapper_top|DIVTOP:divition_module|DIVCU:cu|pstate
+Name pstate.dividing pstate.loading pstate.starting pstate.Idle 
+pstate.Idle 0 0 0 0 
+pstate.starting 0 0 1 1 
+pstate.loading 0 1 0 1 
+pstate.dividing 1 0 0 1 
+
+State Machine - |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU|pstate
+Name pstate.calculating pstate.starting pstate.wating_for_buffer pstate.converging pstate.accepting pstate.loading pstate.wating_for_data_ready pstate.Idle 
+pstate.Idle 0 0 0 0 0 0 0 0 
+pstate.wating_for_data_ready 0 0 0 0 0 0 1 1 
+pstate.loading 0 0 0 0 0 1 0 1 
+pstate.accepting 0 0 0 0 1 0 0 1 
+pstate.converging 0 0 0 1 0 0 0 1 
+pstate.wating_for_buffer 0 0 1 0 0 0 0 1 
+pstate.starting 0 1 0 0 0 0 0 1 
+pstate.calculating 1 0 0 0 0 0 0 1 

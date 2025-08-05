@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jun 11 17:40:52 2024
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : dividerQ2
+Top-level Entity Name : dividerQ2
+Family : Cyclone IV E
+Total logic elements : 67
+    Total combinational functions : 42
+    Dedicated logic registers : 53
+Total registers : 53
+Total pins : 40
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

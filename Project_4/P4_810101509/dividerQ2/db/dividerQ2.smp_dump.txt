@@ -1,0 +1,10 @@
+
+State Machine - |dividerQ2|controller:c|ps
+Name ps.dec ps.restore ps.parA ps.shifting ps.load ps.init ps.idle 
+ps.idle 0 0 0 0 0 0 0 
+ps.init 0 0 0 0 0 1 1 
+ps.load 0 0 0 0 1 0 1 
+ps.shifting 0 0 0 1 0 0 1 
+ps.parA 0 0 1 0 0 0 1 
+ps.restore 0 1 0 0 0 0 1 
+ps.dec 1 0 0 0 0 0 1 

@@ -1,0 +1,455 @@
+Analysis & Synthesis report for wrapper_top
+Sat Feb 01 10:09:19 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU|pstate
+  9. State Machine - |wrapper_top|DIVTOP:divition_module|DIVCU:cu|pstate
+ 10. State Machine - |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU|pstate
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU
+ 15. Parameter Settings for User Entity Instance: DIVTOP:divition_module|DIVCU:cu
+ 16. Parameter Settings for User Entity Instance: output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Feb 01 10:09:19 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; wrapper_top                                     ;
+; Top-level Entity Name              ; wrapper_top                                     ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 202                                             ;
+;     Total combinational functions  ; 146                                             ;
+;     Dedicated logic registers      ; 142                                             ;
+; Total registers                    ; 142                                             ;
+; Total pins                         ; 23                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; wrapper_top        ; wrapper_top        ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 20     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; ../wrapper_top.v                 ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/wrapper_top.v        ;         ;
+; ../priorityencoder_16.v          ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/priorityencoder_16.v ;         ;
+; ../preprocess_D.v                ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/preprocess_D.v       ;         ;
+; ../output_wrapper_top.v          ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/output_wrapper_top.v ;         ;
+; ../output_wrapper_dp.v           ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/output_wrapper_dp.v  ;         ;
+; ../output_wrapper_cu.v           ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/output_wrapper_cu.v  ;         ;
+; ../input_wrapper_top.v           ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/input_wrapper_top.v  ;         ;
+; ../input_wrapper_dp.v            ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/input_wrapper_dp.v   ;         ;
+; ../input_wrapper_cu.v            ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/input_wrapper_cu.v   ;         ;
+; ../DIVTOP.v                      ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/DIVTOP.v             ;         ;
+; ../DIVDP.v                       ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/DIVDP.v              ;         ;
+; ../DIVCU.v                       ; yes             ; User Verilog HDL File  ; C:/Users/EMTOO/Desktop/CA/DLD/CA6/DIVCU.v              ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 202       ;
+;                                             ;           ;
+; Total combinational functions               ; 146       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 64        ;
+;     -- 3 input functions                    ; 49        ;
+;     -- <=2 input functions                  ; 33        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 130       ;
+;     -- arithmetic mode                      ; 16        ;
+;                                             ;           ;
+; Total registers                             ; 142       ;
+;     -- Dedicated logic registers            ; 142       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 23        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 142       ;
+; Total fan-out                               ; 1071      ;
+; Average fan-out                             ; 3.21      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Library Name ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+--------------+
+; |wrapper_top                                ; 146 (0)           ; 142 (0)      ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |wrapper_top                                                                                 ; work         ;
+;    |DIVTOP:divition_module|                 ; 104 (0)           ; 76 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|DIVTOP:divition_module                                                          ; work         ;
+;       |DIVCU:cu|                            ; 12 (12)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|DIVTOP:divition_module|DIVCU:cu                                                 ; work         ;
+;       |DIVDP:dp|                            ; 76 (76)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|DIVTOP:divition_module|DIVDP:dp                                                 ; work         ;
+;       |preprocess_D:preprocessor|           ; 16 (1)            ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|DIVTOP:divition_module|preprocess_D:preprocessor                                ; work         ;
+;          |priorityencoder_16:pri_encoder|   ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|DIVTOP:divition_module|preprocess_D:preprocessor|priorityencoder_16:pri_encoder ; work         ;
+;    |input_wrapper_top:INPUT_WRAPPER_TOP|    ; 16 (0)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP                                             ; work         ;
+;       |input_wrapper_cu:INPUT_WRAPPER_CU|   ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU           ; work         ;
+;       |input_wrapper_dp:INPUT_WRAPPER_DP|   ; 7 (7)             ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_dp:INPUT_WRAPPER_DP           ; work         ;
+;    |output_wrapper_top:OUTPUT_WRAPPER_TOP|  ; 26 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP                                           ; work         ;
+;       |output_wrapper_cu:OUTPUT_WRAPPER_CU| ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU       ; work         ;
+;       |output_wrapper_dp:OUTPUT_WRAPPER_DP| ; 20 (20)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_dp:OUTPUT_WRAPPER_DP       ; work         ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU|pstate                      ;
++-----------------------------+------------------------+------------------+--------------+-------------+-----------------------------+
+; Name                        ; pstate.waiting_for_got ; pstate.diverging ; pstate.empty ; pstate.Idle ; pstate.making_sure_got_data ;
++-----------------------------+------------------------+------------------+--------------+-------------+-----------------------------+
+; pstate.Idle                 ; 0                      ; 0                ; 0            ; 0           ; 0                           ;
+; pstate.empty                ; 0                      ; 0                ; 1            ; 1           ; 0                           ;
+; pstate.diverging            ; 0                      ; 1                ; 0            ; 1           ; 0                           ;
+; pstate.waiting_for_got      ; 1                      ; 0                ; 0            ; 1           ; 0                           ;
+; pstate.making_sure_got_data ; 0                      ; 0                ; 0            ; 1           ; 1                           ;
++-----------------------------+------------------------+------------------+--------------+-------------+-----------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |wrapper_top|DIVTOP:divition_module|DIVCU:cu|pstate                ;
++-----------------+-----------------+----------------+-----------------+-------------+
+; Name            ; pstate.dividing ; pstate.loading ; pstate.starting ; pstate.Idle ;
++-----------------+-----------------+----------------+-----------------+-------------+
+; pstate.Idle     ; 0               ; 0              ; 0               ; 0           ;
+; pstate.starting ; 0               ; 0              ; 1               ; 1           ;
+; pstate.loading  ; 0               ; 1              ; 0               ; 1           ;
+; pstate.dividing ; 1               ; 0              ; 0               ; 1           ;
++-----------------+-----------------+----------------+-----------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU|pstate                                                                                           ;
++------------------------------+--------------------+-----------------+--------------------------+-------------------+------------------+----------------+------------------------------+-------------+
+; Name                         ; pstate.calculating ; pstate.starting ; pstate.wating_for_buffer ; pstate.converging ; pstate.accepting ; pstate.loading ; pstate.wating_for_data_ready ; pstate.Idle ;
++------------------------------+--------------------+-----------------+--------------------------+-------------------+------------------+----------------+------------------------------+-------------+
+; pstate.Idle                  ; 0                  ; 0               ; 0                        ; 0                 ; 0                ; 0              ; 0                            ; 0           ;
+; pstate.wating_for_data_ready ; 0                  ; 0               ; 0                        ; 0                 ; 0                ; 0              ; 1                            ; 1           ;
+; pstate.loading               ; 0                  ; 0               ; 0                        ; 0                 ; 0                ; 1              ; 0                            ; 1           ;
+; pstate.accepting             ; 0                  ; 0               ; 0                        ; 0                 ; 1                ; 0              ; 0                            ; 1           ;
+; pstate.converging            ; 0                  ; 0               ; 0                        ; 1                 ; 0                ; 0              ; 0                            ; 1           ;
+; pstate.wating_for_buffer     ; 0                  ; 0               ; 1                        ; 0                 ; 0                ; 0              ; 0                            ; 1           ;
+; pstate.starting              ; 0                  ; 1               ; 0                        ; 0                 ; 0                ; 0              ; 0                            ; 1           ;
+; pstate.calculating           ; 1                  ; 0               ; 0                        ; 0                 ; 0                ; 0              ; 0                            ; 1           ;
++------------------------------+--------------------+-----------------+--------------------------+-------------------+------------------+----------------+------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                      ; Reason for Removal ;
++------------------------------------------------------------------------------------+--------------------+
+; output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU|pstate~4 ; Lost fanout        ;
+; output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU|pstate~5 ; Lost fanout        ;
+; DIVTOP:divition_module|DIVCU:cu|pstate~4                                           ; Lost fanout        ;
+; DIVTOP:divition_module|DIVCU:cu|pstate~5                                           ; Lost fanout        ;
+; input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU|pstate~4     ; Lost fanout        ;
+; input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU|pstate~5     ; Lost fanout        ;
+; input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU|pstate~6     ; Lost fanout        ;
+; Total Number of Removed Registers = 7                                              ;                    ;
++------------------------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 142   ;
+; Number of registers using Synchronous Clear  ; 19    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 142   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 125   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_dp:OUTPUT_WRAPPER_DP|Count[0] ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |wrapper_top|DIVTOP:divition_module|DIVDP:dp|Qreg[14]                                           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |wrapper_top|DIVTOP:divition_module|DIVDP:dp|Dreg[7]                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |wrapper_top|input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_dp:INPUT_WRAPPER_DP|Count[0]     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |wrapper_top|output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_dp:OUTPUT_WRAPPER_DP|Bus[4]   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |wrapper_top|DIVTOP:divition_module|DIVDP:dp|Areg[6]                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU ;
++-----------------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name        ; Value ; Type                                                                               ;
++-----------------------+-------+------------------------------------------------------------------------------------+
+; Idle                  ; 000   ; Unsigned Binary                                                                    ;
+; wating_for_data_ready ; 001   ; Unsigned Binary                                                                    ;
+; loading               ; 010   ; Unsigned Binary                                                                    ;
+; accepting             ; 011   ; Unsigned Binary                                                                    ;
+; converging            ; 100   ; Unsigned Binary                                                                    ;
+; wating_for_buffer     ; 101   ; Unsigned Binary                                                                    ;
+; starting              ; 110   ; Unsigned Binary                                                                    ;
+; calculating           ; 111   ; Unsigned Binary                                                                    ;
++-----------------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DIVTOP:divition_module|DIVCU:cu ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; Idle           ; 00    ; Unsigned Binary                                     ;
+; starting       ; 01    ; Unsigned Binary                                     ;
+; loading        ; 10    ; Unsigned Binary                                     ;
+; dividing       ; 11    ; Unsigned Binary                                     ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU ;
++----------------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                                    ;
++----------------------+-------+-----------------------------------------------------------------------------------------+
+; Idle                 ; 000   ; Unsigned Binary                                                                         ;
+; empty                ; 001   ; Unsigned Binary                                                                         ;
+; diverging            ; 010   ; Unsigned Binary                                                                         ;
+; waiting_for_got      ; 011   ; Unsigned Binary                                                                         ;
+; making_sure_got_data ; 100   ; Unsigned Binary                                                                         ;
++----------------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Feb 01 10:09:15 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off wrapper_top -c wrapper_top
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/wrapper_top.v
+    Info (12023): Found entity 1: wrapper_top
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/wrapper_tb.v
+    Info (12023): Found entity 1: wrapper_tb
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/priorityencoder_16.v
+    Info (12023): Found entity 1: priorityencoder_16
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/preprocess_d.v
+    Info (12023): Found entity 1: preprocess_D
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/output_wrapper_top.v
+    Info (12023): Found entity 1: output_wrapper_top
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/output_wrapper_dp.v
+    Info (12023): Found entity 1: output_wrapper_dp
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/output_wrapper_cu.v
+    Info (12023): Found entity 1: output_wrapper_cu
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/input_wrapper_top.v
+    Info (12023): Found entity 1: input_wrapper_top
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/input_wrapper_dp.v
+    Info (12023): Found entity 1: input_wrapper_dp
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/input_wrapper_cu.v
+    Info (12023): Found entity 1: input_wrapper_cu
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/divtop.v
+    Info (12023): Found entity 1: DIVTOP
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/divdp.v
+    Info (12023): Found entity 1: DIVDP
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/divcu.v
+    Info (12023): Found entity 1: DIVCU
+Info (12021): Found 1 design units, including 1 entities, in source file /users/emtoo/desktop/ca/dld/ca6/div_tb.v
+    Info (12023): Found entity 1: DIV_TB
+Info (12127): Elaborating entity "wrapper_top" for the top level hierarchy
+Info (12128): Elaborating entity "input_wrapper_top" for hierarchy "input_wrapper_top:INPUT_WRAPPER_TOP"
+Info (12128): Elaborating entity "input_wrapper_dp" for hierarchy "input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_dp:INPUT_WRAPPER_DP"
+Warning (10230): Verilog HDL assignment warning at input_wrapper_dp.v(34): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "input_wrapper_cu" for hierarchy "input_wrapper_top:INPUT_WRAPPER_TOP|input_wrapper_cu:INPUT_WRAPPER_CU"
+Info (12128): Elaborating entity "DIVTOP" for hierarchy "DIVTOP:divition_module"
+Info (12128): Elaborating entity "preprocess_D" for hierarchy "DIVTOP:divition_module|preprocess_D:preprocessor"
+Info (12128): Elaborating entity "priorityencoder_16" for hierarchy "DIVTOP:divition_module|preprocess_D:preprocessor|priorityencoder_16:pri_encoder"
+Info (12128): Elaborating entity "DIVDP" for hierarchy "DIVTOP:divition_module|DIVDP:dp"
+Warning (10230): Verilog HDL assignment warning at DIVDP.v(52): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at DIVDP.v(54): truncated value with size 32 to match size of target (17)
+Info (12128): Elaborating entity "DIVCU" for hierarchy "DIVTOP:divition_module|DIVCU:cu"
+Warning (10230): Verilog HDL assignment warning at DIVCU.v(42): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at DIVCU.v(43): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at DIVCU.v(63): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "output_wrapper_top" for hierarchy "output_wrapper_top:OUTPUT_WRAPPER_TOP"
+Info (12128): Elaborating entity "output_wrapper_dp" for hierarchy "output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_dp:OUTPUT_WRAPPER_DP"
+Warning (10230): Verilog HDL assignment warning at output_wrapper_dp.v(13): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "output_wrapper_cu" for hierarchy "output_wrapper_top:OUTPUT_WRAPPER_TOP|output_wrapper_cu:OUTPUT_WRAPPER_CU"
+Warning (10230): Verilog HDL assignment warning at output_wrapper_cu.v(25): truncated value with size 32 to match size of target (1)
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "DIVTOP:divition_module|preprocess_D:preprocessor|priorityencoder_16:pri_encoder|y[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DIVTOP:divition_module|preprocess_D:preprocessor|priorityencoder_16:pri_encoder|y[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DIVTOP:divition_module|preprocess_D:preprocessor|priorityencoder_16:pri_encoder|y[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DIVTOP:divition_module|preprocess_D:preprocessor|priorityencoder_16:pri_encoder|y[0]" feeding internal logic into a wire
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 229 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 206 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4594 megabytes
+    Info: Processing ended: Sat Feb 01 10:09:19 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
